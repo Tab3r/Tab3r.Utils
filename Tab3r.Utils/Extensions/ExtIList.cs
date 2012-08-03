@@ -21,7 +21,10 @@ namespace Tab3r.Utils.Extensions
         /// <returns>Cloned list</returns>
         public static IList<T> Clone<T>(this IList<T> listToClone) where T : ICloneable
         {
-            return listToClone.Select(item => (T)item.Clone()).ToList();
+            if (listToClone == null)
+                return null;
+            else
+                return listToClone.Select(item => (T)item.Clone()).ToList();
         }
 
         /// <summary>
@@ -32,7 +35,24 @@ namespace Tab3r.Utils.Extensions
         /// <returns>Cloned list</returns>
         public static IList<T> CloneDeep<T>(this IList<T> listToDeepClone) where T : ISerializable
         {
-            return listToDeepClone.Select(item => (T)item.DeepClone()).ToList();
+            if (listToDeepClone == null)
+                return null;
+            else
+                return listToDeepClone.Select(item => (T)item.DeepClone()).ToList();
+        }
+
+        /// <summary>
+        /// Clone a generic list
+        /// </summary>
+        /// <typeparam name="T">Objects type</typeparam>
+        /// <param name="listToClone">List</param>
+        /// <returns>Cloned list</returns>
+        public static IList<T> CloneNoIClonable<T>(this IList<T> listToClone)
+        {
+            if (listToClone == null)
+                return null;
+            else
+                return new List<T>(listToClone);
         }
 
         /// <summary>
