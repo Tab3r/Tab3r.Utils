@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="myAssembly\myAssemblyInfo.cs" />
     <Compile Include="Extensions\ExtEnum.cs" />
     <Compile Include="Extensions\ExtIList.cs" />
     <Compile Include="Extensions\ExtInteger.cs" />

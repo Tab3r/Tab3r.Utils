@@ -9,16 +9,12 @@ namespace Tab3r.Utils.Extensions
     {
         public static bool isOdd(this long value)
         {
-            if (value % 2 == 0)
-                return false;
-            else return true;
+            return (value % 2 == 0) ? false : true;
         }
 
         public static bool isEven(this long value)
         {
-            if (value % 2 == 0)
-                return true;
-            else return false;
+            return (value % 2 == 0) ? true : false;
         }
     }
 }
