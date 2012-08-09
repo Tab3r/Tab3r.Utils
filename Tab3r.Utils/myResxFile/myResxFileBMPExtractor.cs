@@ -12,7 +12,7 @@ namespace Tab3r.Utils.myResxFile
     public static class myResxFileBMPExtractor
     {
 
-        public void getBMPFiles(string resxFile)
+        public static void getBMPFiles(string resxFile)
         {
             // Create a Resource Reader
             ResXResourceReader rsxr = new ResXResourceReader(resxFile);
